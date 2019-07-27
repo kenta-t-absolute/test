@@ -1,7 +1,7 @@
 <?php
 session_start();
  ?>
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +11,26 @@ session_start();
  .title{
     font-size:30px;
   }
- span{
-   color:red
- }
+
   </style>
 </head>
 <body>
-  <?=$_GET["action"];?>
+
+<?php
+//$_GET[]でrewriteは引き継がれてる
+//check.phpで代入した$_SESSION["name"];がechoで表示出来ないのはなぜ？
+//入力フォームに修正前の記載が出せない。。
+
+echo $_GET["action"];
+echo $_SESSION["name"];
+if($_GET["action"] == rewrite){
+  echo "名前あり";
+}else{
+  echo "名前無し";
+}
+
+?>
+
   <p class="title">ユーザーデータベース</p>
   <form action="check.php" method="POST" enctype="multipart/form-data">
 名前<br>
