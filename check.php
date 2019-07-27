@@ -1,7 +1,10 @@
 <?php
 $_SESSION["name"] = $_POST["name"];
-
-
+$_SESSION["name2"] = $_POST["name2"];
+$_SESSION["address"] = $_POST["address"];
+$_SESSION["sex"] = $_POST["sex"];
+$_SESSION["e-mail"] = $_POST["e-mail"];
+$_SESSION["phone"] = $_POST["phone"];
  ?>
 <!DOCTYPE html>
 <html>
@@ -33,12 +36,13 @@ $_SESSION["name"] = $_POST["name"];
     <br><br>
 性別<br>
 <?php
-
 if($_POST["sex"] == "men"){
   echo "男";
-}else{
+}else if($_POST["sex"] == "female"){
   echo "女";
-  }
+}else{
+  echo "";
+}
 ?>
     <br><br>
 e-mail<br>
